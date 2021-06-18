@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Nuevo proyecto</title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+              <!-- Image and text -->
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+            <img src="https://lh3.googleusercontent.com/proxy/w9QbZaWzRMulRMQsIH-U-OGIenUokw4XKEs7NEKMIoa3_DY_RXMM2jwghPya0MDOW_mp6P7eLFTABVbjTEGzYaUEAXQfgGS33X49_VA" width="60" height="40" class="d-inline-block align-top" alt="">
+            Taller de proyectos
+            </a>
+        </nav>
+
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">Empresa</label>
+              <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Empresa X" required disabled>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Encargado</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Encargado 1</option>
+                  <option>Geologo 2</option>
+                  <option>Tecnico 3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Nombre del proyecto</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Ubicación</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="inputState">Vida útil estimada</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Entre 1 día y 2 años</option>
+                  <option>Entre 2 años y 10 años</option>
+                  <option>Más de 10 años</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="inputState">Uso durante la vida útil</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Frecuente</option>
+                  <option>Moderado</option>
+                  <option>Bajo</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="inputState">Tipo de tronadura</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Opción 1</option>
+                  <option>Opción 2</option>
+                </select>
+            </div>
+
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Datos de esfuerzo (opcional)</label>
+            </div>
+        </div>
+        <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Ingresar
+            </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="alert alert-success" role="alert">
+                    Ingreso exitoso
+                </div>
+            </div>
+            <a href="/">
+            <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="location.href='/';">Cerrar</button>
+            </div>
+            </a>
+            </div>
+        </div>
+    </form>
+    </body>
+</html>

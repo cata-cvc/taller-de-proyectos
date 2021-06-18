@@ -10,12 +10,171 @@
     </head>
     <body>
         <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
              <img src="https://lh3.googleusercontent.com/proxy/w9QbZaWzRMulRMQsIH-U-OGIenUokw4XKEs7NEKMIoa3_DY_RXMM2jwghPya0MDOW_mp6P7eLFTABVbjTEGzYaUEAXQfgGS33X49_VA" width="60" height="40" class="d-inline-block align-top" alt="">
              Taller de proyectos
              </a>
         </nav>
+        <div class="container"><br>
+        <div class="row align-items-center justify-content-center">
+        <div class="col-md-4">
+            <form>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                      <label for="validationCustom01">Empresa</label>
+                      <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Empresa X" required disabled>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="validationCustom02">Encargado</label>
+                      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Geologo" required disabled>
+                      <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
 
-        
+                <div class="form-group col-md-4">
+                    <label for="inputState">Proyecto</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>Proyecto 1</option>
+                      <option>Proyecto 2</option>
+                      <option>Proyecto 3</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Dureza del relleno</legend>
+                    <div class="col-sm-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="qz">
+                            <label class="form-check-label" for="qz">
+                                Qz-Plg-S
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="2" id="sulfuros">
+                            <label class="form-check-label" for="sulfuros">
+                                Sulfuros
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="2" id="anhidritas">
+                            <label class="form-check-label" for="anhidritas">
+                                Anhidritas
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="3" id="calcita">
+                            <label class="form-check-label" for="calcita">
+                                Calcita
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="4" id="arcilla">
+                            <label class="form-check-label" for="arcilla">
+                                Arcilla
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="5" id="na">
+                            <label class="form-check-label" for="na">
+                                N/A
+                            </label>
+                        </div>
+                </div>
+                
+                    <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">Rugosidad observable</legend>
+                        <div class="col-sm-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            Alta rugosidad
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                            <label class="form-check-label" for="gridRadios2">
+                            Rugosidad media
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                            <label class="form-check-label" for="gridRadios2">
+                                Baja rugosidad
+                            </label>
+                            </div>
+                        </div>
+                    </div>
+                    </fieldset>
+
+                    <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">Tipo de alteración</legend>
+                        <div class="col-sm-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="cu">
+                                <label class="form-check-label" for="cu">
+                                Oxido de Cu
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2" id="fe">
+                                <label class="form-check-label" for="fe">
+                                Oxido de Fe
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2" id="cl-ep">
+                                <label class="form-check-label" for="cl-ep">
+                                Clorita-Epidota
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="3" id="ar">
+                                <label class="form-check-label" for="ar">
+                                Arcillas
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="4" id="na">
+                                <label class="form-check-label" for="na">
+                                N/A
+                                </label>
+                            </div>
+                    </div>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Calcular
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Recomendación</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                            ...
+                            Según los datos ingresados se recomienda utilizar 'recomendación' dado que el tunel posee 'tipo de roca'
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </form>
+        </div>
+        </div> 
+        </div>   
     </body>
 </html>

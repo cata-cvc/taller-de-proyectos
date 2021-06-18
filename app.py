@@ -46,12 +46,16 @@ def nueva_empresa():
     return render_template('empresa.html', form=form)
 
 @app.route("/rmr")
-def calculo():
+def rmr():
     return render_template('rmr.html')
 
 @app.route("/mrmr")
-def calculo():
+def mrmr():
     return render_template('mrmr.html')
+
+@app.route("/nuevo_proyecto")
+def proyecto():
+    return render_template('proyecto.html', show_predictions_modal=True)
 
 if __name__ == "__main__":
     app.run()
