@@ -1,51 +1,55 @@
 <html>
     <head>
-        <title> Calculo fortificacion</title>
+        <title>Menu principal</title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <form>
-            <section>Datos</section>
-            <textarea>Nombre</textarea>
-            <br>
-            <br>
-            <br>
-            <textarea>Cliente</textarea>
-            <br>
-            <br>
-            <br>
-            <textarea>Obra</textarea>
-            <br>
-            <br>
-            <br>
-            <textarea>Estacion geomecanica</textarea>
-            <br>
-            <br>
-            <br>
-            <textarea>Localidad</textarea>
-            <br>
-            <br>
-            <br>
-            <textarea>Observaciones</textarea>
-            <br>
-            <br>
-            <br>
-            <date>Fecha</date>
-            <section>Uso</section>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Seleccione uso</option>
-                <option value="Bajo"> Bajo</option>
-                <option value="Moderado">Moderado</option>
-                <option value="Alto">Alto</option>
-              </select>
-            <section></section>
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Seleccione</option>
-                <option value="Bajo"></option>
-                <option value="Moderado">Two</option>
-                <option value="Alto">Three</option>
-              </select>
-              <button onsubmit="">Siguiente</button>
-        </form>
+      <!-- Image and text -->
+      <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+       <img src="https://lh3.googleusercontent.com/proxy/w9QbZaWzRMulRMQsIH-U-OGIenUokw4XKEs7NEKMIoa3_DY_RXMM2jwghPya0MDOW_mp6P7eLFTABVbjTEGzYaUEAXQfgGS33X49_VA" width="60" height="40" class="d-inline-block align-top" alt="">
+       Taller de proyectos
+       </a>
+      </nav>
+  
+      <div class="card-columns">
+        <div class="container">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Recomendación de fortificación</h5>
+              <p class="card-text">Ingrese los datos requeridos para obtener la recomendación de fortificación que necesita</p>
+              <a href="/rmr" class="btn btn-primary">Recomendación con RMR</a>
+              <br>
+              <br>
+              <a href="/mrmr" class="btn btn-primary">Recomendación con MRMR</a>
+            </div>
+          </div>
+        </div>
 
+
+        <div class="container">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Nueva Empresa</h5>
+              <p class="card-text">Ingrese los datos de una nueva empresa que utilizará el software</p>
+              <a href="/nueva_empresa" class="btn btn-primary">Agregar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Nuevo geologo</h5>
+              <p class="card-text">Agregue miembros de su equipo de trabajo</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
     </body>
 </html>
