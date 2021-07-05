@@ -49,15 +49,32 @@ def nueva_empresa():
 def rmr():
     return render_template('rmr.html')
 
-@app.route("/mrmr")
+@app.route("/mrmr", methods=['GET','POST'])
 def mrmr():
     return render_template('mrmr.html')
+
+@app.route('/rec_mrmr', methods=['GET','POST'])
+def rec_mrmr():
+    if request.method=='POST':
+        ola=2
+    info=[ola]
+    return render_template('rec_mrmr.html', info=info)
+
+@app.route('/rec_rmr', methods=['GET','POST'])
+def rec_rmr():
+    if request.method=='POST':
+        ola=2
+    info=[ola]
+    return render_template('rec_rmr.html', info=info)
+
 
 @app.route("/nuevo_proyecto")
 def proyecto():
     return render_template('proyecto.html', show_predictions_modal=True)
 
+
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 conn.close()

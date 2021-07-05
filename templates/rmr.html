@@ -1,20 +1,165 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+{%block content%}
+
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Datos previos</button>
+      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Datos fotografía</button>
+      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Datos en terreno</button>
+    </div>
+  </nav>
+
+  <form class="" action="rec_rmr" method="POST">
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Empresa</label>
+                  <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Empresa X" required disabled>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom02">Encargado</label>
+                  <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Geologo" required disabled>
+                </div>
+            </div>
+            <br>
+            Resistencia:
+            <br>
+            <img src="{{url_for('static', filename='resistencia.png')}}" width="400" height="250"/>
+
+            <br>
+            <br>
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Tiempo de vida útil</label>
+            <select class="custom-select my-1 mr-sm-2" id="vida">
+                <option selected>Choose...</option>
+                <option value="1">Un año o menos</option>
+                <option value="2">Entre un año y 10 años</option>
+                <option value="3">Más de 10 años</option>
+            </select>
+
+            {{vida}}
+            <br>
+            <br>
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Uso del túnel</label>
+            <select class="custom-select my-1 mr-sm-2" id="uso">
+                <option selected>Choose...</option>
+                <option value="1">Frecuente</option>
+                <option value="2">Moderado</option>
+                <option value="3">Bajo</option>
+            </select>
+        
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">RQD</label>
+            <select class="custom-select my-1 mr-sm-2" id="rqd">
+                <option selected>Choose...</option>
+                <option value="1">Frecuente</option>
+                <option value="2">Moderado</option>
+                <option value="3">Bajo</option>
+            </select>
+
+            <br>
+            <br>
+
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Separación por discontinuidades [m]</label>
+            <select class="custom-select my-1 mr-sm-2" id="separacion">
+                <option selected>Choose...</option>
+                <option value="1">Frecuente</option>
+                <option value="2">Moderado</option>
+                <option value="3">Bajo</option>
+            </select>
+
+            <br>
+            <br>
+            <label>Estado de las discontinuidades (observable)</label>
+
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Persistencia [m]</label>
+            <select class="custom-select my-1 mr-sm-2" id="persistencia">
+                <option selected>Choose...</option>
+                <option value="1">Frecuente</option>
+                <option value="2">Moderado</option>
+                <option value="3">Bajo</option>
+            </select>
+
+            <br>
+            <br>
+
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Abertura [mm]</label>
+            <select class="custom-select my-1 mr-sm-2" id="abertura">
+                <option selected>Choose...</option>
+                <option value="1">Frecuente</option>
+                <option value="2">Moderado</option>
+                <option value="3">Bajo</option>
+            </select>
+
+            <br>
+            <br>
+
+            Presencia de agua
+           
+            <br>
+            <br>
+
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Corrección por orientación de las discontinuidades</label>
+            <select class="custom-select my-1 mr-sm-2" id="correccion">
+                <option selected>Choose...</option>
+                <option value="0">Muy favorable</option>
+                <option value="-2">Favorable</option>
+                <option value="-5">Regular</option>
+                <option value="-10">Desfavorable</option>
+                <option value="-15">Muy desfavorable</option>
+            </select>
+            <img src="{{url_for('static', filename='orientacion.png')}}" width="1000" height="250"/>
+
+        </div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <label>Estado de las discontinuidades (revisión en terreno)</label>
+            <br>
+            <br>
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Rugosidad</label>
+            <select class="custom-select my-1 mr-sm-2" id="rugosidad">
+                <option selected>Choose...</option>
+                <option value="1">Frecuente</option>
+                <option value="2">Moderado</option>
+                <option value="3">Bajo</option>
+            </select>
+            <img src="{{url_for('static', filename='rugosidad.png')}}" width="250" height="250"/>
+            <br>
+            <br>
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Relleno</label>
+            <select class="custom-select my-1 mr-sm-2" id="relleno">
+                <option selected>Choose...</option>
+                <option value="1">Frecuente</option>
+                <option value="2">Moderado</option>
+                <option value="3">Bajo</option>
+            </select>
+            <br>
+            <br>
+
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Alteración</label>
+            <select class="custom-select my-1 mr-sm-2" id="alteracion">
+                <option selected>Choose...</option>
+                <option value="1">Frecuente</option>
+                <option value="2">Moderado</option>
+                <option value="3">Bajo</option>
+            </select>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary mb-2">Calcular</button>
+        </div>
+    </div>
+    
+  </form>
+
+{%endblock%}
+<!--
 <html>
     <head>
         <title>Recomendación RMR</title>
-        <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </head>
+       </head>
     <body>
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="/">
-             <img src="https://lh3.googleusercontent.com/proxy/w9QbZaWzRMulRMQsIH-U-OGIenUokw4XKEs7NEKMIoa3_DY_RXMM2jwghPya0MDOW_mp6P7eLFTABVbjTEGzYaUEAXQfgGS33X49_VA" width="60" height="40" class="d-inline-block align-top" alt="">
-             Taller de proyectos
-             </a>
-        </nav>
+
         <div class="container"><br>
         <div class="row align-items-center justify-content-center">
         <div class="col-md-4">
@@ -146,13 +291,48 @@
                                 </label>
                             </div>
                     </div>
-
-                    <!-- Button trigger modal -->
+                    <div class="form-group col-md-4">
+                        <label for="inputState">Frecuencia aparente</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>Encargado 1</option>
+                          <option>Geologo 2</option>
+                          <option>Tecnico 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">Frecuencia areal</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>Encargado 1</option>
+                          <option>Geologo 2</option>
+                          <option>Tecnico 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">Frecuencia volumetrica</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>Encargado 1</option>
+                          <option>Geologo 2</option>
+                          <option>Tecnico 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">Orientación</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>Encargado 1</option>
+                          <option>Geologo 2</option>
+                          <option>Tecnico 3</option>
+                        </select>
+                    </div>
+                   
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         Calcular
                     </button>
                     
-                    <!-- Modal -->
+                    
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -178,3 +358,4 @@
         </div>   
     </body>
 </html>
+-->
