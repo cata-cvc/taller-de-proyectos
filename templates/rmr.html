@@ -16,58 +16,255 @@
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                   <label for="validationCustom01">Empresa</label>
-                  <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Empresa X" required disabled>
+                  <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="{{empresa}}" required disabled>
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="validationCustom02">Encargado</label>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Geologo" required disabled>
+                  <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="{{geologo}}" required disabled>
                 </div>
             </div>
             <br>
             Resistencia:
             <br>
-            <img src="{{url_for('static', filename='resistencia.png')}}" width="400" height="250"/>
+
+            <div class="alert alert-warning" role="alert">
+                Seleccionar sólo una de las formas de medir resistencia
+            </div>
+
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Ensayo carga puntual [MPa]</label>
+                            <select class="custom-select my-1 mr-sm-2" name="resistencia1">
+                                <option>Choose...</option>
+                                <option value="0">No aplica</option>
+                                <option value="4">1 a 2</option>
+                                <option value="7">2 a 4</option>
+                                <option value="12">4 a 10</option>
+                                <option value="15">Más de 10</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Compresión simple [MPa]</label>
+                            <select class="custom-select my-1 mr-sm-2" name="resistencia2">
+                                <option>Choose...</option>
+                                <option value="0">No aplica</option>
+                                <option value="0">Menor a 1</option>
+                                <option value="1">1 a 5</option>
+                                <option value="2">5 a 25</option>
+                                <option value="4">25 a 50</option>
+                                <option value="7">50 a 100</option>
+                                <option value="12">100 a 250</option>
+                                <option value="15">Más de 250</option>
+                            </select>
+
+                            <img src="{{url_for('static', filename='resistencia.png')}}" width="400" height="250"/>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
 
             <br>
             <br>
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Tiempo de vida útil</label>
-            <select class="custom-select my-1 mr-sm-2" id="vida">
-                <option selected>Choose...</option>
-                <option value="1">Un año o menos</option>
-                <option value="2">Entre un año y 10 años</option>
-                <option value="3">Más de 10 años</option>
-            </select>
 
-            {{vida}}
-            <br>
-            <br>
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Uso del túnel</label>
-            <select class="custom-select my-1 mr-sm-2" id="uso">
-                <option selected>Choose...</option>
-                <option value="1">Frecuente</option>
-                <option value="2">Moderado</option>
-                <option value="3">Bajo</option>
-            </select>
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Tiempo de vida útil</label>
+                        <select class="custom-select my-1 mr-sm-2" name="vida">
+                            <option selected>Choose...</option>
+                            <option value="1">Un año o menos</option>
+                            <option value="2">Entre un año y 10 años</option>
+                            <option value="3">Más de 10 años</option>
+                        </select>  
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Uso del túnel</label>
+                        <select class="custom-select my-1 mr-sm-2" name="uso">
+                            <option selected>Choose...</option>
+                            <option value="1">Frecuente</option>
+                            <option value="2">Moderado</option>
+                            <option value="3">Bajo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">RQD</label>
-            <select class="custom-select my-1 mr-sm-2" id="rqd">
+
+            <div class="col">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="{{url_for('static',filename='tunel1.png')}}" alt="First slide" width="1100" height="350">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{{url_for('static',filename='tunel2.png')}}" alt="Second slide" width="500" height="350">
+                    </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="row">
+                    
+                    <br>
+                    <br>
+                    <br>
+                    <div class="col">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">RQD</label>
+                        <select class="custom-select my-1 mr-sm-2" name="rqd">
+                            <option selected>Choose...</option>
+                            <option value="3">Menor a 25</option>
+                            <option value="8">25 a 50</option>
+                            <option value="13">50 a 75</option>
+                            <option value="17">75 a 90</option>
+                            <option value="20">90 a 100</option>
+                        </select>
+        
+                        <br>
+                        <br>
+    
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Separación por discontinuidades [m]</label>
+                        <select class="custom-select my-1 mr-sm-2" name="separacion">
+                            <option selected>Choose...</option>
+                            <option value="20">Mayor a 2</option>
+                            <option value="15">0,6 a 2</option>
+                            <option value="10">0,2 a 0,6</option>
+                            <option value="8">0,06 a 0,2</option>
+                            <option value="5">Menor a 0,06</option>
+                        </select>
+    
+                        <br>
+                        <br>
+                        <label>Estado de las discontinuidades (observable)</label>
+    
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Persistencia [m]</label>
+                        <select class="custom-select my-1 mr-sm-2" name="persistencia">
+                            <option selected>Choose...</option>
+                            <option value="6">Menor a 1</option>
+                            <option value="4">1 a 3</option>
+                            <option value="2">3 a 10</option>
+                            <option value="1">10 a 20</option>
+                            <option value="0">Mayor a 20</option>
+                            
+                        </select>
+    
+                        <br>
+                        <br>
+    
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Abertura [mm]</label>
+                        <select class="custom-select my-1 mr-sm-2" name="abertura">
+                            <option selected>Choose...</option>
+                            <option value="6">Nada</option>
+                            <option value="5">Menor a 0,1</option>
+                            <option value="3">0,1 a 1</option>
+                            <option value="1">1 a 5</option>
+                            <option value="0">Mayor a 5</option>
+                        </select>
+    
+                        <br>
+                        <br>
+    
+                        Presencia de agua
+    
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="alert alert-warning" role="alert">
+                                Seleccionar sólo una de las formas de medir la presencia de agua
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Caudal por 10 m del túnel [L/min]</label>
+                                    <select class="custom-select my-1 mr-sm-2" name="agua1">
+                                        <option selected>Choose...</option>
+                                        <option value="15">Nulo</option>
+                                        <option value="10">Menor a 10</option>
+                                        <option value="7">10 a 25</option>
+                                        <option value="4">25 a 125</option>
+                                        <option value="0">Mayor a 125</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Presión de agua/Tensión superficial</label>
+                                    <select class="custom-select my-1 mr-sm-2" name="agua2">
+                                        <option selectede>Choose...</option>
+                                        <option value="15">0</option>
+                                        <option value="10">0 a 0,1</option>
+                                        <option value="7">0,1 a 0,2</option>
+                                        <option value="4">0,2 a 0,5</option>
+                                        <option value="0">Mayor a 0,5</option>
+                                    </select>   
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Estado general</label>
+                                    <select class="custom-select my-1 mr-sm-2" name="agua3">
+                                        <option selected>Choose...</option>
+                                        <option value="15">Seco</option>
+                                        <option value="10">Ligeramente húmedo</option>
+                                        <option value="7">Húmedo</option>
+                                        <option value="4">Goteando</option>
+                                        <option value="0">Fluyendo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <br>
+                        <br>
+    
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Corrección por orientación de las discontinunameades</label>
+                        <select class="custom-select my-1 mr-sm-2" name="correccion">
+                            <option selected>Choose...</option>
+                            <option value="0">Muy favorable</option>
+                            <option value="-2">Favorable</option>
+                            <option value="-5">Regular</option>
+                            <option value="-10">Desfavorable</option>
+                            <option value="-15">Muy desfavorable</option>
+                        </select>
+                        <img src="{{url_for('static', filename='orientacion.png')}}" width="1000" height="250"/>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">RQD</label>
+            <select class="custom-select my-1 mr-sm-2" name="rqd">
                 <option selected>Choose...</option>
-                <option value="1">Frecuente</option>
-                <option value="2">Moderado</option>
-                <option value="3">Bajo</option>
+                <option value="3">Menor a 25</option>
+                <option value="8">25 a 50</option>
+                <option value="13">50 a 75</option>
+                <option value="17">75 a 90</option>
+                <option value="20">90 a 100</option>
             </select>
 
             <br>
             <br>
 
             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Separación por discontinuidades [m]</label>
-            <select class="custom-select my-1 mr-sm-2" id="separacion">
+            <select class="custom-select my-1 mr-sm-2" name="separacion">
                 <option selected>Choose...</option>
-                <option value="1">Frecuente</option>
-                <option value="2">Moderado</option>
-                <option value="3">Bajo</option>
+                <option value="20">Mayor a 2</option>
+                <option value="15">0,6 a 2</option>
+                <option value="10">0,2 a 0,6</option>
+                <option value="8">0,06 a 0,2</option>
+                <option value="5">Menor a 0,06</option>
             </select>
 
             <br>
@@ -75,34 +272,79 @@
             <label>Estado de las discontinuidades (observable)</label>
 
             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Persistencia [m]</label>
-            <select class="custom-select my-1 mr-sm-2" id="persistencia">
+            <select class="custom-select my-1 mr-sm-2" name="persistencia">
                 <option selected>Choose...</option>
-                <option value="1">Frecuente</option>
-                <option value="2">Moderado</option>
-                <option value="3">Bajo</option>
+                <option value="6">Menor a 1</option>
+                <option value="4">1 a 3</option>
+                <option value="2">3 a 10</option>
+                <option value="1">10 a 20</option>
+                <option value="0">Mayor a 20</option>
+                
             </select>
 
             <br>
             <br>
 
             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Abertura [mm]</label>
-            <select class="custom-select my-1 mr-sm-2" id="abertura">
+            <select class="custom-select my-1 mr-sm-2" name="abertura">
                 <option selected>Choose...</option>
-                <option value="1">Frecuente</option>
-                <option value="2">Moderado</option>
-                <option value="3">Bajo</option>
+                <option value="6">Nada</option>
+                <option value="5">Menor a 0,1</option>
+                <option value="3">0,1 a 1</option>
+                <option value="1">1 a 5</option>
+                <option value="0">Mayor a 5</option>
             </select>
 
             <br>
             <br>
 
             Presencia de agua
+
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="alert alert-warning" role="alert">
+                    Seleccionar sólo una de las formas de medir la presencia de agua
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Caudal por 10 m del túnel [L/min]</label>
+                        <select class="custom-select my-1 mr-sm-2" name="agua1">
+                            <option selected>Choose...</option>
+                            <option value="15">Nulo</option>
+                            <option value="10">Menor a 10</option>
+                            <option value="7">10 a 25</option>
+                            <option value="4">25 a 125</option>
+                            <option value="0">Mayor a 125</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Presión de agua/Tensión superficial</label>
+                        <select class="custom-select my-1 mr-sm-2" name="agua2">
+                            <option selectede>Choose...</option>
+                            <option value="15">0</option>
+                            <option value="10">0 a 0,1</option>
+                            <option value="7">0,1 a 0,2</option>
+                            <option value="4">0,2 a 0,5</option>
+                            <option value="0">Mayor a 0,5</option>
+                        </select>   
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Estado general</label>
+                        <select class="custom-select my-1 mr-sm-2" name="agua3">
+                            <option selected>Choose...</option>
+                            <option value="15">Seco</option>
+                            <option value="10">Ligeramente húmedo</option>
+                            <option value="7">Húmedo</option>
+                            <option value="4">Goteando</option>
+                            <option value="0">Fluyendo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
            
             <br>
             <br>
-
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Corrección por orientación de las discontinuidades</label>
-            <select class="custom-select my-1 mr-sm-2" id="correccion">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Corrección por orientación de las discontinunameades</label>
+            <select class="custom-select my-1 mr-sm-2" name="correccion">
                 <option selected>Choose...</option>
                 <option value="0">Muy favorable</option>
                 <option value="-2">Favorable</option>
@@ -112,250 +354,55 @@
             </select>
             <img src="{{url_for('static', filename='orientacion.png')}}" width="1000" height="250"/>
 
-        </div>
+            </div>
+
+            -->
+            
+
+            
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
             <label>Estado de las discontinuidades (revisión en terreno)</label>
             <br>
             <br>
             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Rugosidad</label>
-            <select class="custom-select my-1 mr-sm-2" id="rugosidad">
+            <select class="custom-select my-1 mr-sm-2" name="rugosidad">
                 <option selected>Choose...</option>
-                <option value="1">Frecuente</option>
-                <option value="2">Moderado</option>
-                <option value="3">Bajo</option>
+                <option value="6">Muy rugosa</option>
+                <option value="5">Rugosa</option>
+                <option value="3">Ligeramente rugosa</option>
+                <option value="1">Ondulada</option>
+                <option value="0">Suave</option>
             </select>
             <img src="{{url_for('static', filename='rugosidad.png')}}" width="250" height="250"/>
             <br>
             <br>
             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Relleno</label>
-            <select class="custom-select my-1 mr-sm-2" id="relleno">
+            <select class="custom-select my-1 mr-sm-2" name="relleno">
                 <option selected>Choose...</option>
-                <option value="1">Frecuente</option>
-                <option value="2">Moderado</option>
-                <option value="3">Bajo</option>
+                <option value="6">Ninguno</option>
+                <option value="4">Duro menor a 5 mm</option>
+                <option value="3">Duro mayor a 5 mm</option>
+                <option value="2">Blanco menor a 5 mm</option>
+                <option value="0">Blando mayor a 5 mm</option>
             </select>
             <br>
             <br>
 
             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Alteración</label>
-            <select class="custom-select my-1 mr-sm-2" id="alteracion">
+            <select class="custom-select my-1 mr-sm-2" name="alteracion">
                 <option selected>Choose...</option>
-                <option value="1">Frecuente</option>
-                <option value="2">Moderado</option>
-                <option value="3">Bajo</option>
+                <option value="6">Inalterado</option>
+                <option value="5">Ligeramente alterado</option>
+                <option value="3">Moderadamente alterado</option>
+                <option value="1">Muy alterado</option>
+                <option value="0">Descompuesto</option>
             </select>
             <br>
             <br>
-            <button type="submit" class="btn btn-primary mb-2">Calcular</button>
+            <input type="submit" class="btn btn-primary mb-2" value="Calcular">
         </div>
     </div>
     
   </form>
 
 {%endblock%}
-<!--
-<html>
-    <head>
-        <title>Recomendación RMR</title>
-       </head>
-    <body>
-
-        <div class="container"><br>
-        <div class="row align-items-center justify-content-center">
-        <div class="col-md-4">
-            <form>
-                <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                      <label for="validationCustom01">Empresa</label>
-                      <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Empresa X" required disabled>
-                      <div class="valid-feedback">
-                        Looks good!
-                      </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label for="validationCustom02">Encargado</label>
-                      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Geologo" required disabled>
-                      <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                </div>
-
-                <div class="form-group col-md-4">
-                    <label for="inputState">Proyecto</label>
-                    <select id="inputState" class="form-control">
-                      <option selected>Choose...</option>
-                      <option>Proyecto 1</option>
-                      <option>Proyecto 2</option>
-                      <option>Proyecto 3</option>
-                    </select>
-                </div>
-
-                <div class="row">
-                    <legend class="col-form-label col-sm-2 pt-0">Dureza del relleno</legend>
-                    <div class="col-sm-12">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" id="qz">
-                            <label class="form-check-label" for="qz">
-                                Qz-Plg-S
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="2" id="sulfuros">
-                            <label class="form-check-label" for="sulfuros">
-                                Sulfuros
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="2" id="anhidritas">
-                            <label class="form-check-label" for="anhidritas">
-                                Anhidritas
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="3" id="calcita">
-                            <label class="form-check-label" for="calcita">
-                                Calcita
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="4" id="arcilla">
-                            <label class="form-check-label" for="arcilla">
-                                Arcilla
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="5" id="na">
-                            <label class="form-check-label" for="na">
-                                N/A
-                            </label>
-                        </div>
-                </div>
-                
-                    <fieldset class="form-group">
-                    <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Rugosidad observable</legend>
-                        <div class="col-sm-12">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                            <label class="form-check-label" for="gridRadios1">
-                            Alta rugosidad
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                            <label class="form-check-label" for="gridRadios2">
-                            Rugosidad media
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                            <label class="form-check-label" for="gridRadios2">
-                                Baja rugosidad
-                            </label>
-                            </div>
-                        </div>
-                    </div>
-                    </fieldset>
-
-                    <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Tipo de alteración</legend>
-                        <div class="col-sm-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="1" id="cu">
-                                <label class="form-check-label" for="cu">
-                                Oxido de Cu
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="2" id="fe">
-                                <label class="form-check-label" for="fe">
-                                Oxido de Fe
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="2" id="cl-ep">
-                                <label class="form-check-label" for="cl-ep">
-                                Clorita-Epidota
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="3" id="ar">
-                                <label class="form-check-label" for="ar">
-                                Arcillas
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="4" id="na">
-                                <label class="form-check-label" for="na">
-                                N/A
-                                </label>
-                            </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputState">Frecuencia aparente</label>
-                        <select id="inputState" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>Encargado 1</option>
-                          <option>Geologo 2</option>
-                          <option>Tecnico 3</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputState">Frecuencia areal</label>
-                        <select id="inputState" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>Encargado 1</option>
-                          <option>Geologo 2</option>
-                          <option>Tecnico 3</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputState">Frecuencia volumetrica</label>
-                        <select id="inputState" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>Encargado 1</option>
-                          <option>Geologo 2</option>
-                          <option>Tecnico 3</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputState">Orientación</label>
-                        <select id="inputState" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>Encargado 1</option>
-                          <option>Geologo 2</option>
-                          <option>Tecnico 3</option>
-                        </select>
-                    </div>
-                   
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Calcular
-                    </button>
-                    
-                    
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Recomendación</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>
-                            <div class="modal-body">
-                            ...
-                            Según los datos ingresados se recomienda utilizar 'recomendación' dado que el tunel posee 'tipo de roca'
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </form>
-        </div>
-        </div> 
-        </div>   
-    </body>
-</html>
--->

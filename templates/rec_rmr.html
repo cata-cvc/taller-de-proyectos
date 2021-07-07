@@ -1,8 +1,30 @@
 {% extends "layout.html" %}
-{% block content %}
-{{info}}
+{% block content %} 
+<div class="col-md-4">
+    <h2>Recomendación</h2>
+El cálculo ingresado corresponde a un puntaje de: 
 
+{{puntaje}}
+<br>
+Correspondiente a una {{clase}}
+<h3>Excavación</h3>
+{{excavacion}}
+<br>
+<br>
+<h3>Apernado</h3>
+{{apernado}}
+<br>
+<br>
+<h3>Hormigón</h3>
+{{hormigon}}
+<br>
+<br>
+<h3>Conjuntos de aceros</h3>
+{{aceros}}
 <br>
 <br>
 <a href="/"><button type="button" class="btn btn-primary mb-2">Volver</button></a>
+
+</div>
+
 {%endblock%}
